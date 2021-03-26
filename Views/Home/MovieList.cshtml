@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "List of Movies";
+}
+<!--Nicholas Applegate, Section 1 Group 3-->
+<!--import model-->
+@model MovieListViewModel
+
+<!--create table that dynamically adds in movies that are created in AddMovieForm-->
+<table>
+    <thead>
+        <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited</th><th>LentTo</th><th>Notes</th></tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model.Movies)
+        {
+        <tr>
+            <td>@x.Category</td>
+            <td>@x.Title</td>
+            <td>@x.Year</td>
+            <td>@x.Director</td>
+            <td>@x.Rating</td>
+            <td>@x.Edited</td>
+            <td>@x.LentTo</td>
+            <td>@x.Notes</td>
+            <td>
+                <form asp-action="EditMovieForm" method="get">
+                    <button type="submit">Edit</button>
+                </form>
+            </td>
+            <td><button>Delete</button></td>
+        </tr>
+        }
+    </tbody>
+</table>

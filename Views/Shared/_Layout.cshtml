@@ -1,0 +1,21 @@
+﻿<!--Nicholas Applegate, Section 1 Group 3-->
+<!DOCTYPE html>
+<html lang="en">
+<!--Provide site title, uniform navigation, and dynamic way to add page title-->
+<head>
+    <title>The Joel Hilton Film Collection</title>
+</head>
+<body>
+    <h1>The Joel Hilton Film Collection</h1>
+    <br />
+    <a asp-action="Index">Home Page</a>
+    <a asp-action="MovieList">List of Movies</a>
+    <a asp-action="MyPodcasts">My Podcasts</a>
+    <a asp-action="AddMovieForm">Add a Movie</a>
+    <br />
+    <h2>@ViewBag.Title</h2>
+
+    @RenderBody()
+
+</body>
+</html>
